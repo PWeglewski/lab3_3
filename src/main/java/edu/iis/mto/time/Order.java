@@ -11,11 +11,14 @@ public class Order {
     private State orderState;
     private List<OrderItem> items = new ArrayList<OrderItem>();
     private DateTime subbmitionDate;
-
     private TimeSource timeSource = new DefaultTimeSource();
 
     public Order() {
         orderState = State.CREATED;
+    }
+
+    public void setTimeSource(TimeSource timeSource) {
+        this.timeSource = timeSource;
     }
 
     public void addItem(OrderItem item) {
